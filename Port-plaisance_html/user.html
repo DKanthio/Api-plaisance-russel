@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Utilisateurs</title>
+</head>
+<body>
+    <h1>Liste des Utilisateurs</h1>
+    <ul id="usersList"></ul>
+
+    <script>
+      
+        fetch('/users')
+            .then(response => response.json())
+            .then(users => {
+                const usersList = document.getElementById('usersList');
+
+                
+                users.forEach(user => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `Nom: ${user.name}, Email: ${user.email}`;
+                    usersList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Erreur lors de la récupération des utilisateurs :', error));
+    </script>
+</body>
+</html>

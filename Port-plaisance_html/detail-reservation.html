@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail des Réservations</title>
+</head>
+<body>
+    <h1>Détail des Réservations</h1>
+
+    <div id="reservations-list"></div>
+
+    <script>
+        
+        function getReservations() {
+            fetch('/reservations')
+                .then(response => response.json())
+                .then(data => {
+                  
+                    displayReservations(data);
+                })
+                .catch(error => console.error('Erreur lors de la récupération des réservations:', error));
+        }
+
+     
+        function displayReservations(reservations) {
+            const reservationsList = document.getElementById('reservations-list');
+            reservationsList.innerHTML = ''; 
+
+            if (reservations.length === 0) {
+                reservationsList.innerHTML = '<p>Aucune réservation trouvée.</p>';
+                return;
+            }
+
+            const ul = document.createElement('ul');
+            reservations.forEach(reservation => {
+                const li = document.createElement('li');
+                li.textContent = `Catway: ${reservation.catwayNumber}, Client: ${reservation.clientName}, Bateau: ${reservation.boatName}, Début: ${reservation.checkIn}, Fin: ${reservation.checkOut}`;
+                ul.appendChild(li);
+            });
+            reservationsList.appendChild(ul);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            getReservations();
+        });
+    </script>
+</body>
+</html>

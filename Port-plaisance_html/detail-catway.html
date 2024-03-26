@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail des Catways</title>
+</head>
+<body>
+    <h1>Détail des Catways</h1>
+    <ul id="catwaysList"></ul>
+
+       
+    </ul>
+    <script>
+      
+fetch('/catways')
+  .then(response => response.json())
+  .then(catways => {
+    const catwaysList = document.getElementById('catwaysList');
+
+   
+    catways.forEach(catway => {
+      const listItem = document.createElement('li');
+      listItem.textContent = `Numéro de catway: ${catway.catwayNumber}, Type: ${catway.type}, État: ${catway.catwayState}`;
+      catwaysList.appendChild(listItem);
+    });
+  })
+  .catch(error => console.error('Erreur lors de la récupération des catways :', error));
+
+    </script>
+</body>
+</html>

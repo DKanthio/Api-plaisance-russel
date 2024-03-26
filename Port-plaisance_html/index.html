@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port de plaisance Russell</title>
+    <link rel="stylesheet" href="accueil.css">
+
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <h1>Bienvenue sur le site du port de plaisance Russell !</h1>
+        <p>
+          Cette application permet de gérer les réservations de catways pour le port
+          de plaisance de Russell.
+        </p>
+        
+        <a href="documentation.html" target="_blank">Documentation de l'API</a>
+        <h2>Se connecter</h2>
+        <form id="loginForm" action="/login" method="POST">
+           <input type="email" name="email" placeholder="Email" required>
+           <input type="password" name="password" placeholder="Mot de passe" required>
+           <button type="submit">Se connecter</button>
+        </form>
+
+        <h2>S'inscrire</h2>
+        <form id="signupForm" action="/signup" method="POST">
+            <input type="text" name="name" placeholder="Nom" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Mot de passe" required>
+            <button type="submit">S'inscrire</button>
+        </form>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
