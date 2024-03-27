@@ -11,7 +11,7 @@
 
 <div class="form-link-container">
     <h2>Créer un utilisateur</h2> <a href="/user.html">Liste des utilisateurs</a>
-    <form id="createUserForm" action="signup" method="POST">
+    <form id="createUserForm" action="/users/signup" method="POST">
         <input type="text" name="name" placeholder="Nom" required>
         <input type="email" name="email" placeholder="Email" required>
         <input type="password" name="password" placeholder="Mot de passe" required>
@@ -22,7 +22,7 @@
 
 <div class="form-container">
     <h2>Modifier un utilisateur</h2>
-    <form id="updateUserForm" action="updateUser" method="POST">
+    <form id="updateUserForm" action="/users/updateUser" method="POST">
         <input type="text" name="userId" placeholder="ID de l'utilisateur à modifier" required>
         <input type="text" name="name" placeholder="Nouveau nom">
         <input type="email" name="email" placeholder="Nouvel email">
@@ -33,7 +33,7 @@
 
 <div class="form-container">
     <h2>Supprimer un utilisateur</h2>
-    <form id="deleteUserForm" action="deleteUser" method="POST">
+    <form id="deleteUserForm" action="/users/deleteUser" method="POST">
         <input type="text" name="userId" placeholder="ID de l'utilisateur à supprimer" required>
         <button type="submit">Supprimer</button>
     </form>
@@ -42,7 +42,7 @@
 <div class="form-link-container">
     <h2>Créer un catway</h2>
     <a href="catways.html">Liste des catways</a>
-    <form id="createCatwayForm" action="createCatway" method="POST">
+    <form id="createCatwayForm" action="/catways/createCatway" method="POST">
         <input type="text" name="catwayNumber" placeholder="Numéro du catway" required><br><br>
         <label for="type">Sélectionnez le type:</label>
         <select id="type" name="type" required>
@@ -58,7 +58,7 @@
 
 <div class="form-container">
     <h2>Modifier la description de l'état d'un catway</h2>
-    <form id="updateCatwayStateForm" action="updateCatwayState" method="POST">
+    <form id="updateCatwayStateForm" action="/catways/updateCatwayState" method="POST">
         <input type="text" name="catwayId" placeholder="ID du catway à modifier" required>
         <input type="text" name="catwayState" placeholder="Nouvelle description de l'état" required>
         <button type="submit">Modifier</button>
@@ -67,7 +67,7 @@
 
 <div class="form-container">
     <h2>Supprimer un catway</h2>
-    <form id="deleteCatwayForm" action="deleteCatway" method="POST">
+    <form id="deleteCatwayForm" action="/catways/deleteCatway" method="POST">
         <input type="text" name="catwayId" placeholder="ID du catway à supprimer" required>
         <button type="submit">Supprimer</button>
     </form>
@@ -77,7 +77,7 @@
     <h2>Enregistrer une réservation</h2>
     <a href="reservations.html">Liste des réservations</a>
 
-    <form id="createReservationForm" action="createReservation" method="POST">
+    <form id="createReservationForm" action="/reservations/createReservation" method="POST">
         <input type="text" name="catwayNumber" placeholder="Numéro du catway" required>
         <input type="text" name="clientName" placeholder="Nom du client" required>
         <input type="text" name="boatName" placeholder="Nom du bateau" required>
@@ -89,7 +89,7 @@
 
 <div class="form-container">
     <h2>Supprimer une réservation</h2>
-    <form id="deleteReservationForm" action="deleteReservation" method="POST">
+    <form id="deleteReservationForm" action="/reservations/deleteReservation" method="POST">
         <input type="text" name="reservationId" placeholder="ID de la réservation à supprimer" required>
         <button type="submit">Supprimer</button>
     </form>
@@ -98,7 +98,7 @@
 <div class="form-container">
     <h2>Afficher les détails d'un catway</h2>
     <a href="detail-catway.html">Détail des catways</a>
-    <form id="catwayDetailsForm" action="getCatwayDetails" method="GET">
+    <form id="catwayDetailsForm" action="/catways/getCatwayDetails" method="GET">
         <input type="text" name="catwayId" placeholder="ID du catway" required>
         <button type="submit">Afficher les détails</button>
     </form>
@@ -107,7 +107,7 @@
 <div class="form-container">
     <h2>Afficher les détails d'une réservation</h2>
     <a href="detail-reservation.html">Détail des réservations</a>
-    <form id="reservationDetailsForm" action="getReservationDetails" method="GET">
+    <form id="reservationDetailsForm" action="/reservations/getReservationDetails" method="GET">
         <input type="text" name="reservationId" placeholder="ID de la réservation" required>
         <button type="submit">Afficher les détails</button>
     </form>
