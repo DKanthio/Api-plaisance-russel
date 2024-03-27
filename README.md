@@ -15,3 +15,6 @@ Après avoir installé les dépendances, lancez le serveur en exécutant la comm
 
 node app.js
 Le serveur sera démarré et sera accessible à l'adresse http://localhost:3000.
+# Pour le test exécuter ce code:
+
+npm test
