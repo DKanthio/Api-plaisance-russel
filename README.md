@@ -4,6 +4,7 @@
 Clonez ce dépôt sur votre machine locale en utilisant la commande suivante :
 git clone <lien-du-dépôt>
 # Installation des dépendances :
+npm install mongoose
 
 Une fois le dépôt téléchargé, naviguez jusqu'au répertoire du projet dans votre terminal.
 # Exécutez la commande suivante pour installer les dépendances :
