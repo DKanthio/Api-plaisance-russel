@@ -11,7 +11,7 @@
 
     <script>
       
-        fetch('/users/users')
+        fetch('http://localhost:3000/users/users')
             .then(response => response.json())
             .then(users => {
                 const usersList = document.getElementById('usersList');
